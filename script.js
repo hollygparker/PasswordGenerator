@@ -3,83 +3,27 @@
 // prompt for uppercase, lowercase, numeric, and/or special characters
 var generatePassBtn = document.querySelector("#generate");
 
-const upperCase = [
-  "A",
-  "B",
-  "C",
-  "D",
-  "E",
-  "F",
-  "G",
-  "H",
-  "I",
-  "J",
-  "K",
-  "L",
-  "M",
-  "N",
-  "O",
-  "P",
-  "Q",
-  "R",
-  "S",
-  "T",
-  "U",
-  "V",
-  "W",
-  "X",
-  "Y",
-  "Z",
-];
-
-const lowerCase = [
-  "a",
-  "b",
-  "c",
-  "d",
-  "e",
-  "f",
-  "g",
-  "h",
-  "i",
-  "j",
-  "k",
-  "l",
-  "m",
-  "n",
-  "o",
-  "p",
-  "q",
-  "r",
-  "s",
-  "t",
-  "u",
-  "v",
-  "w",
-  "x",
-  "y",
-  "z",
-];
-
-const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-
-const specialChars = ["!", "#", "$", "%", "&", "*", "_", "=", "~", "?"];
-
-console.log(generatePassBtn);
-console.log(upperCase);
-console.log(lowerCase);
-console.log(numbers);
-console.log(specialChars);
-
 function passwordGenerator() {
   console.log("inside");
   var length = prompt(
     "Please select a password length between 8 and 128 characters."
   );
+
   if (length < 8 || length > 128) {
     alert("Please select a password length between 8 and 128 characters.");
     return null;
   } else {
+
+    var upperCase = "QWERTYUIOPASDFGHJKLZXCVBNM"
+    var lowerCase = "qwertyuiopasdfghjklzxcvbnm"
+    var numbers = "1234567890"
+    var specialChars = "!~`@#$%^&*()_-+=|\}]{[;:/?.>,<"
+
+    console.log(upperCase);
+    console.log(lowerCase);
+    console.log(numbers);
+    console.log(specialChars);
+
     var isUpperCase = confirm("Include uppercase characters?");
     var isLowerCase = confirm("Include lowercase characters?");
     var isNumbers = confirm("Include numbers?");
@@ -106,7 +50,7 @@ function passwordGenerator() {
 
     var finalPassword = "";
 
-    for (let i = 0; i < length; i++) {
+    for (let i = 0; i <= length; i++) {
         finalPassword += passwordPool[Math.floor(Math.random() * passwordPool.length)]
         console.log(i + " time in for loop " +finalPassword)        
     }
