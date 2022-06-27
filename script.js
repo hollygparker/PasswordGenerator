@@ -108,10 +108,19 @@ function passwordGenerator() {
 
     for (let i = 0; i < length; i++) {
         finalPassword += passwordPool[Math.floor(Math.random() * passwordPool.length)]
-        console.log(i)
         console.log(i + " time in for loop " +finalPassword)        
     }
+    console.log(finalPassword)
   }
+  return finalPassword;
+}
+
+
+function popPassword() {
+    passwordGen = passwordGenerator()
+    var passwordTextbox = document.querySelector("#password")
+    passwordTextbox.value = passwordGen
+    
 }
 
 // need maybe two functions:
@@ -120,4 +129,4 @@ function passwordGenerator() {
 
 // refer to math.random
 
-generatePassBtn.addEventListener("click", passwordGenerator);
+generatePassBtn.addEventListener("click", popPassword);
