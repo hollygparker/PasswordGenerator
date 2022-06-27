@@ -57,7 +57,7 @@ function passwordGenerator() {
     var finalPassword = "";
 
     // loops over full password character pool until reaching entered specified character length for the password
-    for (let i = 0; i <= length; i++) {
+    for (let i = 0; i < length; i++) {
         finalPassword += passwordPool[Math.floor(Math.random() * passwordPool.length)]
         console.log(i + " time in for loop " +finalPassword)        
     }
